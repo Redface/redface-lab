@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noEmitHelpers": false,
+    "sourceMap": true,
+    "lib": ["es2016", "dom"]
+  },
+  "include": [
+    "src/main-web/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/main-web/app/**/*.spec.ts",
+    "src/main-web/app/**/*.e2e.ts",
+    "src/main-web/app/app-local.module.ts",
+    "src/main-web/main-local.ts"
+  ],
+  "angularCompilerOptions": {
+    "debug": true,
+    "skipMetadataEmit": true,
+    "entryModule": "src/main-web/app/app.module#AppModule",
+    "mainPath": "src/main-web/main.ts"
+  },
+  "compileOnSave": false,
+  "buildOnSave": false
+}
