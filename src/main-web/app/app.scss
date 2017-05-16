@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: [ header-start ] 0.5fr [ header-end nav-start ] 0.1fr [ nav-end main-start ] 2fr [ main-end footer-start ] 0.5fr [ footer-end ];
+  grid-template-areas: "header" "nav" "main" "footer";
+  min-height: 100%;
+}
+
+.header {
+  grid-area: header;
+  background-color: orange;
+}
+
+.nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+  li {
+    list-style: none;
+  }
+
+  background-color: rebeccapurple;
+}
+
+.main {
+  grid-area: main;
+  background-color: darkolivegreen;
+}
+
+.footer {
+  grid-area: footer;
+}
