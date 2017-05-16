@@ -1,16 +1,17 @@
-<div class="wrapper">
-  <header>
-    <a href="/" [routerLink]="['/']">JazzyRedfaces' lab seesion</a>
+<div class="container">
+  <header class="header">
+    <h1><a href="/" [routerLink]="['/']">JazzyRedfaces' Lab Session</a></h1>
   </header>
-  <nav>
+  <nav class="nav">
     <ul>
-      <li><a href="/admin-menu" [routerLink]="['/test']">EXPERIMENTS</a></li>
+      <li><a href="/experiments" [routerLink]="['/experiments']">EXPERIMENTS</a></li>
     </ul>
   </nav>
-  <main>
+  <main class="main">
+    MAIN
     <router-outlet></router-outlet>
   </main>
-  <footer>
+  <footer class="footer">
     CONTACT : <a href="mailto:redface0512@gmail.com">redface0512@gmail.com</a>
   </footer>
 </div>
