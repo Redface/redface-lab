@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
-import { ExperimentsModule } from './experiments/experiments.module';
+import { ExperimentModule } from './experiment/experiment.module';
 import { RequestHandler, RequestExceptionHandler } from './shared/handlers';
 import { AppService } from './app.service';
 
@@ -16,7 +16,7 @@ const NG_MODULES:Array<Type<any> | ModuleWithProviders | any[]> =
 
 const THIRDPARTY_MODULES:Array<Type<any> | ModuleWithProviders | any[]> = [];
 const CUSTOMISED_MODULES:Array<Type<any> | ModuleWithProviders | any[]> =
-  <any>[AppRoutingModule, HomeModule, ExperimentsModule];
+  <any>[HomeModule, ExperimentModule, AppRoutingModule]; // order matters, AppRoutingModules should come last
 
 const modules:Array<Type<any> | ModuleWithProviders | any[]> = [NG_MODULES, THIRDPARTY_MODULES, CUSTOMISED_MODULES];
 

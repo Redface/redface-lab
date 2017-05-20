@@ -2,17 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { ExperimentsComponent } from './experiments/experiments.component';
+import { ExperimentComponent } from './experiment/experiment.component';
 
+// let's talk about pathMatch: full and prefix
 const appRoutes:Routes = <Routes>[
   {
     path: '',
     children: [
       {path: '', component: HomeComponent},
-      {path: 'experiments', component: ExperimentsComponent}
+      {path: 'experiment', component: ExperimentComponent}
     ]
   },
-  {path: '**', redirectTo: ''} // exceptional urls redirected to default url
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
