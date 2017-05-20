@@ -8,7 +8,6 @@
 
 .header {
   grid-area: header;
-  background-color: orange;
 }
 
 .nav {
@@ -18,13 +17,10 @@
   li {
     list-style: none;
   }
-
-  background-color: rebeccapurple;
 }
 
 .main {
   grid-area: main;
-  background-color: darkolivegreen;
 }
 
 .footer {
