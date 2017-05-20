@@ -1,0 +1,12 @@
+.main-container {
+  display: flex;
+
+  height: 100%;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+article {
+  width: 30%;
+  margin: 2% 0;
+  border: 1px solid #fff;
+}
