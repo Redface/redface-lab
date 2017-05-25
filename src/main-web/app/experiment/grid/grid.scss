@@ -10,14 +10,8 @@ img {
   border: 1px solid #fff;
 }
 
-.div1 {
-  background-color: purple;
-}
-
-.div2 {
-  background-color: darkslateblue;
-}
-
-.div3 {
-  background-color: indianred;
+@media screen and (max-width: 750px) {
+  .snap-section {
+    flex-flow: row wrap;
+  }
 }
