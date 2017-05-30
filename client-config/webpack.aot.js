@@ -73,8 +73,7 @@ module.exports = {
       unsafe: true
     }),
     new CopyWebpackPlugin([
-      {from: 'src/imgs', to: 'imgs'},
-      {from: 'src/o2osdk', to: 'o2osdk'}
+      {from: 'src/assets', to: 'assets'}
     ]),
     new HtmlWebpackPlugin({
       template: 'src/views/index.html',

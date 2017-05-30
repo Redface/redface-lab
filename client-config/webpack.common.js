@@ -110,7 +110,7 @@ module.exports = {
       }),
 
       new CopyWebpackPlugin([
-        {from: 'src/imgs', to: 'imgs'}
+        {from: 'src/assets', to: 'assets'}
       ]),
       new HtmlWebpackPlugin({
         template: 'src/views/index.html',
