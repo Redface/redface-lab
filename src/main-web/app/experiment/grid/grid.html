@@ -17,3 +17,27 @@
     <img src="http://spnimage.edaily.co.kr/images/photo/files/NP/S/2016/11/PS16110700095.jpg">
   </div>
 </section>
+<section>
+  <p class="hey">Well, here's my first lab session. Nothing fancy, but pretty cool, simple and practical stuff.</p>
+  <p>What I really wanted to try after knowing Flexbox is, the pinterest-like image layout.</p>
+  <p>Laying different size of images may not relevant to Flexbox, but the focus is on fitting split image sections into
+    a single line.</p>
+  <p>Let's just cut to the chase. All you need to do is writting flex display in a section wrapping images</p>
+
+  <pre><code class="css hljs">
+   {{'.snap-section { display: flex; }'}}
+  </code></pre>
+
+  <p>Then, you will get image sections fitted in a signle line, but it doesn't look good in a mobile display. So you
+    will write one more code line.</p>
+  <pre><code class="css hljs">
+   {{
+    '@media screen and (max-width: 750px) {
+      .snap-section { flex-flow: row wrap; }
+    }'
+    }}
+  </code></pre>
+
+  <p>Flex-flow will sets a direction and decision of being layed out in a single line or multiple lines.</p>
+  <p>The code above sets multiple line to row direction, so images will be moved down when the image size cannot be fitted in.</p>
+</section>
