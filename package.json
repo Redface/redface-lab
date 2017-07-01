@@ -9,7 +9,7 @@
     "server:local": "NODE_ENV=local webpack-dev-server --config client-config/webpack.dev.js --progress --profile --watch --content-base src/",
     "server:local:was": "NODE_ENV=local-server webpack-dev-server --config client-config/webpack.dev.js --progress --profile --watch --content-base src/",
     "server:dev": "NODE_ENV=dev webpack-dev-server --config client-config/webpack.dev.js --progress --profile --watch --content-base src/",
-    "clean": "rm -rf node_modules ./client-config/coverage dist && npm cache clean",
+    "clean": "rm -rf node_modules ./client-config/coverage dist",
     "clean:dist": "rm -rf ./dist",
     "clean:install": "npm run clean && npm install",
     "build": "npm run build:local",
@@ -20,11 +20,7 @@
     "webdriver-manager": "./node_modules/.bin/webdriver-manager",
     "webdriver:update": "npm run webdriver-manager update",
     "webdriver:start": "npm run webdriver-manager start",
-    "pree2e": "npm run webdriver:update -- --standalone",
-    "test:e2e": "./node_modules/.bin/protractor ./client-config/protractor.conf.js",
-    "test:e2e:live": "npm run e2e -- --elementexplorer",
-    "test:unit": "./node_modules/.bin/karma start ./client-config/karma.conf.js",
-    "test": "npm run test:unit && npm run test:e2e"
+    "pree2e": "npm run webdriver:update -- --standalone"
   },
   "author": "jazzyredface",
   "license": "ISC",
