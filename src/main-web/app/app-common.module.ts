@@ -1,6 +1,6 @@
 import { Type, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -12,7 +12,7 @@ import { RequestHandler, RequestExceptionHandler } from './shared/handlers';
 import { AppService } from './app.service';
 
 const NG_MODULES:Array<Type<any> | ModuleWithProviders | any[]> =
-  <any>[BrowserModule, CommonModule, HttpModule, FormsModule, ReactiveFormsModule];
+  <any>[BrowserModule, CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule];
 
 const THIRDPARTY_MODULES:Array<Type<any> | ModuleWithProviders | any[]> = [];
 const CUSTOMISED_MODULES:Array<Type<any> | ModuleWithProviders | any[]> =
