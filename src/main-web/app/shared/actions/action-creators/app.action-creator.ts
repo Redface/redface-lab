@@ -1,26 +1,17 @@
 import { Action } from '@ngrx/store';
 
-import { INCREMENT, DECREMENT, RESET } from '../app.actions';
+import { Increment, Decrement, Reset } from '../app.actions';
 
 export const AppActions = {
-  increaseNumber(count:number): Action {
-    return {
-      payload: {count},
-      type: INCREMENT
-    };
+  increaseNumber(): Action {
+    return new Increment();
   },
 
-  decreaseNumber(count:number): Action {
-    return {
-      payload: {count},
-      type: DECREMENT
-    };
+  decreaseNumber(): Action {
+    return new Decrement();
   },
 
-  resetNumber(): Action {
-    return {
-      payload: null,
-      type: RESET
-    };
+  resetNumber(count: number): Action {
+    return new Reset(count);
   }
 };

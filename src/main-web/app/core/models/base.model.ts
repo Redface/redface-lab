@@ -4,7 +4,7 @@ import { Action } from '@ngrx/store';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/mergeAll';
 
-import { AsyncService } from '../async-services/base.async-service';
+import { AsyncService } from '../../core/async-services/base.async-service';
 
 export abstract class Model {
   constructor(private _services: AsyncService[]) {}

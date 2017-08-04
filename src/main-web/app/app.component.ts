@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 import { AppService } from './app.service';
+import { AppModel } from './core/models/app.model';
 
 @Component({
   selector: 'rf-entry',
@@ -14,10 +15,20 @@ import { AppService } from './app.service';
 
 export class AppComponent implements OnInit {
 
-  constructor(private router:Router, private titleService:Title, private appService:AppService) {
+  constructor(private router:Router, private titleService:Title, private appService:AppService, private _appModel:AppModel) {
   }
 
   ngOnInit() {
     this.titleService.setTitle('Dashboard Main Page');
+  }
+  
+  increase(){
+    
+  }
+  decrease(){
+
+  }
+  reset(count:number) {
+    
   }
 }

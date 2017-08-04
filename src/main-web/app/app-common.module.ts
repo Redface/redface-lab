@@ -7,6 +7,7 @@ import { HomeModule } from './home/home.module';
 import { ExperimentModule } from './experiment/experiment.module';
 import { AppService } from './app.service';
 import { CoreModule } from './core/core.module';
+import { AppModel } from './core/models/app.model';
 
 const NG_MODULES:Array<Type<any> | ModuleWithProviders | any[]> =
   <any>[BrowserModule];
@@ -19,7 +20,7 @@ const modules:Array<Type<any> | ModuleWithProviders | any[]> = [NG_MODULES, THIR
 
 const NG_PROVIDERS:Array<Type<any> | ModuleWithProviders | any[]> = <any>[Title];
 const THIRDPARTY_PROVIDERS:Array<Type<any> | ModuleWithProviders | any[]> = [];
-const CUSTOMISED_PROVIDERS:Array<Type<any> | ModuleWithProviders | any[]> = <any>[AppService];
+const CUSTOMISED_PROVIDERS:Array<Type<any> | ModuleWithProviders | any[]> = <any>[AppService, AppModel];
 
 export const NG_MODULE = {
   imports: modules,
