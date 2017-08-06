@@ -1,4 +1,4 @@
-import { Type, ModuleWithProviders } from '@angular/core';
+import { Type, ModuleWithProviders, InjectionToken } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app.routing.module';
@@ -8,19 +8,21 @@ import { ExperimentModule } from './experiment/experiment.module';
 import { AppService } from './app.service';
 import { CoreModule } from './core/core.module';
 import { AppModel } from './core/models/app.model';
+import { appReducer } from './shared/reducers/app.reducer';
+import { ActionReducerMap } from '@ngrx/store/store';
 
-const NG_MODULES:Array<Type<any> | ModuleWithProviders | any[]> =
+const NG_MODULES: Array<Type<any> | ModuleWithProviders | any[]> =
   <any>[BrowserModule];
 
-const THIRDPARTY_MODULES:Array<Type<any> | ModuleWithProviders | any[]> = [];
-const CUSTOMISED_MODULES:Array<Type<any> | ModuleWithProviders | any[]> =
+const THIRDPARTY_MODULES: Array<Type<any> | ModuleWithProviders | any[]> = [];
+const CUSTOMISED_MODULES: Array<Type<any> | ModuleWithProviders | any[]> =
   <any>[CoreModule, HomeModule, ExperimentModule, AppRoutingModule]; // order matters, AppRoutingModules should come last
 
-const modules:Array<Type<any> | ModuleWithProviders | any[]> = [NG_MODULES, THIRDPARTY_MODULES, CUSTOMISED_MODULES];
+const modules: Array<Type<any> | ModuleWithProviders | any[]> = [NG_MODULES, THIRDPARTY_MODULES, CUSTOMISED_MODULES];
 
-const NG_PROVIDERS:Array<Type<any> | ModuleWithProviders | any[]> = <any>[Title];
-const THIRDPARTY_PROVIDERS:Array<Type<any> | ModuleWithProviders | any[]> = [];
-const CUSTOMISED_PROVIDERS:Array<Type<any> | ModuleWithProviders | any[]> = <any>[AppService, AppModel];
+const NG_PROVIDERS: Array<Type<any> | ModuleWithProviders | any[]> = <any>[Title];
+const THIRDPARTY_PROVIDERS: Array<Type<any> | ModuleWithProviders | any[]> = [AppModel];
+const CUSTOMISED_PROVIDERS: Array<Type<any> | ModuleWithProviders | any[]> = <any>[AppService];
 
 export const NG_MODULE = {
   imports: modules,
