@@ -17,4 +17,4 @@ export class Reset implements Action {
     this.payload = payload;
   }
 }
-export type All = Increment |Decrement | Reset;
+export type All = Increment | Decrement | Reset;

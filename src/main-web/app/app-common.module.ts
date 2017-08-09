@@ -1,4 +1,4 @@
-import { Type, ModuleWithProviders, InjectionToken } from '@angular/core';
+import { Type, ModuleWithProviders } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app.routing.module';
@@ -8,8 +8,6 @@ import { ExperimentModule } from './experiment/experiment.module';
 import { AppService } from './app.service';
 import { CoreModule } from './core/core.module';
 import { AppModel } from './core/models/app.model';
-import { appReducer } from './shared/reducers/app.reducer';
-import { ActionReducerMap } from '@ngrx/store/store';
 
 const NG_MODULES: Array<Type<any> | ModuleWithProviders | any[]> =
   <any>[BrowserModule];

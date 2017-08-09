@@ -5,6 +5,7 @@ import { Model } from './base.model';
 import { AppActions } from '../../shared/actions/action-creators/app.action-creator';
 import { AsyncService } from '../async-services/base.async-service';
 import { Observable } from 'rxjs/Rx';
+import { Title } from '@angular/platform-browser';
 
 interface AppState {
   counter: number;
@@ -13,17 +14,16 @@ interface AppState {
 export class AppModel extends Model {
 
   counter$: Observable<any>;
-  // constructor(protected _store: Store<any>,
-  //             @Optional() @Inject(AsyncService) _services: AsyncService[]) {
-  //   super(_services || []);
-  // }
 
   constructor(private _store: Store<AppState>,
-              @Optional() @Inject(AsyncService) _services: AsyncService[]) {
+              @Optional() @Inject(AsyncService) _services: AsyncService[], private title:Title) {
     super(_services || []);
     this.counter$ = _store.select('counter');
   }
 
+  setTitle(title:string) {
+    this.title.setTitle(title);
+  }
   increaseNumber() {
     this._store.dispatch(AppActions.increaseNumber());
   }

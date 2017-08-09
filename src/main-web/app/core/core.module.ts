@@ -5,7 +5,6 @@ import { Title } from '@angular/platform-browser';
 
 import { RequestHandler } from '../shared/handlers/requestHandler';
 import { RequestExceptionHandler } from '../shared/handlers/requestExceptionHandler';
-import { AppModel } from '../core/models/app.model';
 import { StoreModule } from '@ngrx/store';
 import { appReducer } from '../shared/reducers/app.reducer';
 
