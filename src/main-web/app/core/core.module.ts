@@ -10,7 +10,7 @@ import { appReducer } from '../shared/reducers/app.reducer';
 
 const NG_MODULES: Array<Type<any> | ModuleWithProviders | any[]> =
   <any>[HttpClientModule, CommonModule];
-const THIRDPARTY_MODULES: Array<Type<any> | ModuleWithProviders | any[]> = [StoreModule.forRoot({ counter: appReducer })];
+const THIRDPARTY_MODULES: Array<Type<any> | ModuleWithProviders | any[]> = [StoreModule.forRoot({ app: appReducer })];
 
 const NG_PROVIDERS: Array<Type<any> | ModuleWithProviders | any[]> = <any>[Title];
 const THIRDPARTY_PROVIDERS: Array<Type<any> | ModuleWithProviders | any[]> = [];

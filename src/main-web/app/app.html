@@ -1,14 +1,14 @@
 <div>
   <button (click)="increase()">Increment</button>
-  <div>Current Count: {{ counter | async }}</div>
+  <div>Current Count: {{ counter$ | async }}</div>
   <button (click)="decrease()">Decrement</button>
 
   <button (click)="reset(3)">Reset Counter</button>
 </div>
 <div class="container">
-  <header class="header">
-    <h1><a href="/" [routerLink]="['/']">JazzyRedfaces' Lab Session</a></h1>
-  </header>
+  <!--<header class="header">-->
+    <!--<h1><a href="/" [routerLink]="['/']">JazzyRedfaces' Lab Session</a></h1>-->
+  <!--</header>-->
   <nav class="nav">
     <ul>
       <li><a href="/experiment" [routerLink]="['/experiment']" routerLinkActive="active">EXPERIMENTS</a></li>

@@ -1,29 +1,28 @@
 import { Inject, Injectable, Optional } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Rx';
 
 import { Model } from './base.model';
 import { AppActions } from '../../shared/actions/action-creators/app.action-creator';
 import { AsyncService } from '../async-services/base.async-service';
-import { Observable } from 'rxjs/Rx';
 import { Title } from '@angular/platform-browser';
+import { InitStore } from '../../shared/store/initstore';
 
-interface AppState {
-  counter: number;
-}
 @Injectable()
 export class AppModel extends Model {
 
-  counter$: Observable<any>;
+  counter$: Observable<number>;
 
-  constructor(private _store: Store<AppState>,
-              @Optional() @Inject(AsyncService) _services: AsyncService[], private title:Title) {
+  constructor(private _store: Store<InitStore>,
+              @Optional() @Inject(AsyncService) _services: AsyncService[], private title: Title) {
     super(_services || []);
-    this.counter$ = _store.select('counter');
+    this.counter$ = _store.select(s => s.app.counter);
   }
 
-  setTitle(title:string) {
+  setTitle(title: string) {
     this.title.setTitle(title);
   }
+
   increaseNumber() {
     this._store.dispatch(AppActions.increaseNumber());
   }
@@ -31,7 +30,8 @@ export class AppModel extends Model {
   decreaseNumber() {
     this._store.dispatch(AppActions.decreaseNumber());
   }
-  resetNumber(count:number) {
+
+  resetNumber(count: number) {
     this._store.dispatch(AppActions.resetNumber(count));
   }
 }

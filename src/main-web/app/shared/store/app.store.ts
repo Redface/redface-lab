@@ -1,5 +1,16 @@
-import { fromJS, Map } from 'immutable';
+import { BaseState } from './basestate';
 
-export const initialState: Map<string, Object> = fromJS({
-  count: 0
-});
+export class AppState extends BaseState {
+  counter: number;
+
+  constructor(counter: number) {
+    super();
+    this.counter = counter;
+  }
+
+  getInstanceOf(obj: any): any {
+    const { counter } = obj;
+    return new AppState(counter);
+  }
+}
+export const appState: AppState = new AppState(0);
