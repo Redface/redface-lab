@@ -5,7 +5,6 @@ import { Title } from '@angular/platform-browser';
 
 import { RequestHandler } from '../shared/handlers/requestHandler';
 import { RequestExceptionHandler } from '../shared/handlers/requestExceptionHandler';
-import { NgrxModel } from './models/ngrx.model';
 
 const NG_MODULES: Array<Type<any> | ModuleWithProviders | any[]> =
   <any>[HttpClientModule, CommonModule];

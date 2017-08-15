@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'rf-entry',
@@ -10,7 +9,7 @@ import { Store } from '@ngrx/store';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private store:Store<any>) {
+  constructor() {
   }
 
   ngOnInit() {

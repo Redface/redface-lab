@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs/Rx';
 
-import { NgrxModel } from '../../core/models/ngrx.model';
+import { NgrxModel } from './store/ngrx.model';
 
 @Component({
   selector: 'rf-ngrx',

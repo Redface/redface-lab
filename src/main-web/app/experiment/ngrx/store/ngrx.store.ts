@@ -1,4 +1,4 @@
-import { BaseState } from './basestate';
+import { BaseState } from '../../../shared/store/basestate';
 
 export class NgrxState extends BaseState {
   counter: number;

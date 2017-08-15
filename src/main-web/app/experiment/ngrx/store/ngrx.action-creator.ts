@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { Increment, Decrement, Reset } from '../ngrx.actions';
+import { Increment, Decrement, Reset } from '../../../shared/actions/ngrx.actions';
 
 export const NgrxActions = {
   increaseNumber(): Action {

@@ -1,6 +1,6 @@
-import { INCREMENT, DECREMENT, RESET } from '../actions/ngrx.actions';
-import * as AppActions from '../actions/ngrx.actions';
-import { ngrxState, NgrxState } from '../store/ngrx.store';
+import { INCREMENT, DECREMENT, RESET } from '../../../shared/actions/ngrx.actions';
+import * as AppActions from '../../../shared/actions/ngrx.actions';
+import { ngrxState, NgrxState } from './ngrx.store';
 
 export type Action = AppActions.All;
 export function ngrxReducer (state: NgrxState = ngrxState, action: Action) {
