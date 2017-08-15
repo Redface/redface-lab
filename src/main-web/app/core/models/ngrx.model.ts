@@ -4,18 +4,18 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Rx';
 
 import { Model } from './base.model';
-import { AppActions } from '../../shared/actions/action-creators/app.action-creator';
+import { NgrxActions } from '../../shared/actions/action-creators/ngrx.action-creator';
 import { Title } from '@angular/platform-browser';
 import { InitStore } from '../../shared/store/initstore';
 
 @Injectable()
-export class AppModel extends Model {
+export class NgrxModel extends Model {
 
   counter$: Observable<number>;
 
   constructor(private _store: Store<InitStore>, private title: Title) {
     super();
-    this.counter$ = _store.select(s => s.app.counter);
+    this.counter$ = _store.select(s => s.ngrx.counter);
   }
 
   setTitle(title: string) {
@@ -23,14 +23,14 @@ export class AppModel extends Model {
   }
 
   increaseNumber() {
-    this._store.dispatch(AppActions.increaseNumber());
+    this._store.dispatch(NgrxActions.increaseNumber());
   }
 
   decreaseNumber() {
-    this._store.dispatch(AppActions.decreaseNumber());
+    this._store.dispatch(NgrxActions.decreaseNumber());
   }
 
   resetNumber(count: number) {
-    this._store.dispatch(AppActions.resetNumber(count));
+    this._store.dispatch(NgrxActions.resetNumber(count));
   }
 }

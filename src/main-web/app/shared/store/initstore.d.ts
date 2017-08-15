@@ -1,5 +1,5 @@
-import { AppState } from './app.store';
+import { NgrxState } from './ngrx.store';
 
 export interface InitStore {
-  app:AppState;
+  ngrx: NgrxState;
 }

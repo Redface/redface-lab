@@ -1,6 +1,6 @@
 import { BaseState } from './basestate';
 
-export class AppState extends BaseState {
+export class NgrxState extends BaseState {
   counter: number;
 
   constructor(counter: number) {
@@ -10,7 +10,7 @@ export class AppState extends BaseState {
 
   getInstanceOf(obj: any): any {
     const { counter } = obj;
-    return new AppState(counter);
+    return new NgrxState(counter);
   }
 }
-export const appState: AppState = new AppState(0);
+export const ngrxState: NgrxState = new NgrxState(0);

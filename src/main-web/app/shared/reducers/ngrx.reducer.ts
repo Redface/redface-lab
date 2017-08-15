@@ -1,9 +1,9 @@
-import { INCREMENT, DECREMENT, RESET } from '../actions/app.actions';
-import * as AppActions from '../actions/app.actions';
-import { appState, AppState } from '../store/app.store';
+import { INCREMENT, DECREMENT, RESET } from '../actions/ngrx.actions';
+import * as AppActions from '../actions/ngrx.actions';
+import { ngrxState, NgrxState } from '../store/ngrx.store';
 
 export type Action = AppActions.All;
-export const appReducer = (state: AppState = appState, action: Action) => {
+export function ngrxReducer (state: NgrxState = ngrxState, action: Action) {
   switch (action.type) {
     case INCREMENT:
       return state.getInstanceOf({ counter: state.counter + 1 });

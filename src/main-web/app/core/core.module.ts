@@ -5,12 +5,11 @@ import { Title } from '@angular/platform-browser';
 
 import { RequestHandler } from '../shared/handlers/requestHandler';
 import { RequestExceptionHandler } from '../shared/handlers/requestExceptionHandler';
-import { StoreModule } from '@ngrx/store';
-import { appReducer } from '../shared/reducers/app.reducer';
+import { NgrxModel } from './models/ngrx.model';
 
 const NG_MODULES: Array<Type<any> | ModuleWithProviders | any[]> =
   <any>[HttpClientModule, CommonModule];
-const THIRDPARTY_MODULES: Array<Type<any> | ModuleWithProviders | any[]> = [StoreModule.forRoot({ app: appReducer })];
+const THIRDPARTY_MODULES: Array<Type<any> | ModuleWithProviders | any[]> = [];
 
 const NG_PROVIDERS: Array<Type<any> | ModuleWithProviders | any[]> = <any>[Title];
 const THIRDPARTY_PROVIDERS: Array<Type<any> | ModuleWithProviders | any[]> = [];
