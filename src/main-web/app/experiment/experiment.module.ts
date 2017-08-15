@@ -8,12 +8,11 @@ import { ExperimentRoutingModule } from './experiment.routing.module';
 import { GridComponent } from './grid/grid.component';
 import { ExperimentListComponent } from './experiment-list/experiment-list.component';
 import { NgrxComponent } from './ngrx/ngrx.component';
-import { ngrxReducer } from './ngrx/store/ngrx.reducer';
-import { NgrxModel } from './ngrx/store/ngrx.model';
+import { NgrxStoreModule } from './ngrx/store/ngrx-store.module';
 
 @NgModule({
-  imports: [CommonModule, ExperimentRoutingModule, StoreModule.forFeature('ngrx', ngrxReducer)],
-  providers: [NgrxModel],
+  imports: [CommonModule, ExperimentRoutingModule, NgrxStoreModule],
+  providers: [],
   declarations: [ExperimentComponent, ExperimentListComponent, GridComponent, NgrxComponent],
   exports: [StoreModule, ExperimentComponent]
 })
