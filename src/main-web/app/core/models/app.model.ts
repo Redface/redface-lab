@@ -1,10 +1,10 @@
-import { Inject, Injectable, Optional } from '@angular/core';
+import { Injectable } from '@angular/core';
+
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Rx';
 
 import { Model } from './base.model';
 import { AppActions } from '../../shared/actions/action-creators/app.action-creator';
-import { AsyncService } from '../async-services/base.async-service';
 import { Title } from '@angular/platform-browser';
 import { InitStore } from '../../shared/store/initstore';
 
@@ -13,9 +13,8 @@ export class AppModel extends Model {
 
   counter$: Observable<number>;
 
-  constructor(private _store: Store<InitStore>,
-              @Optional() @Inject(AsyncService) _services: AsyncService[], private title: Title) {
-    super(_services || []);
+  constructor(private _store: Store<InitStore>, private title: Title) {
+    super();
     this.counter$ = _store.select(s => s.app.counter);
   }
 
