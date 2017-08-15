@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Rx';
 
-import { Model } from '../../../core/models/base.model';
+import { Model } from '../../../shared/models/base.model';
 import { NgrxActions } from './ngrx.action-creator';
 import { Title } from '@angular/platform-browser';
 import { InitStore } from '../../../shared/store/initstore';
