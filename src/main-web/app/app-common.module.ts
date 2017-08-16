@@ -5,17 +5,17 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
-import { HomeModule } from './home/home.module';
 import { ExperimentModule } from './experiment/experiment.module';
 import { AppService } from './app.service';
 import { CoreModule } from './core/core.module';
+import { AboutModule } from './about/about.module';
 
 const NG_MODULES: Array<Type<any> | ModuleWithProviders | any[]> =
   <any>[BrowserModule];
 
 const THIRDPARTY_MODULES: Array<Type<any> | ModuleWithProviders | any[]> = [StoreModule.forRoot([])];
 const CUSTOMISED_MODULES: Array<Type<any> | ModuleWithProviders | any[]> =
-  <any>[CoreModule, HomeModule, ExperimentModule, AppRoutingModule]; // order matters, AppRoutingModules should come last
+  <any>[CoreModule, AboutModule, ExperimentModule, AppRoutingModule]; // order matters, AppRoutingModules should come last
 
 const modules: Array<Type<any> | ModuleWithProviders | any[]> = [NG_MODULES, THIRDPARTY_MODULES, CUSTOMISED_MODULES];
 
