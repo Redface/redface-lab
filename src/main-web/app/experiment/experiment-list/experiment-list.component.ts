@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experiment-list.scss']
 })
 export class ExperimentListComponent implements OnInit {
+  
+  articles = [
+    {url: 'grid', title: 'ZIGZAG GRID'},
+    {url: 'ngrx', title: 'NGRX'},
+  ];
 
   constructor() {
   }

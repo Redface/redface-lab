@@ -1,23 +1,7 @@
 <section class="main-container">
-  <article>
-    <a href="grid" [routerLink]="['grid']">ZIGZAG GRID</a>
-  </article>
-  <article>
-    <a href="ngrx" [routerLink]="['ngrx']">NGRX</a>
-  </article>
-  <article>
-    <a href="eventsource" [routerLink]="['eventsource']">Realtime streaming with EventSource</a>
-  </article>
-  <article>
-    <a href="eventsource" [routerLink]="['eventsource']">Realtime streaming with EventSource</a>
-  </article>
-  <article>
-    <a href="eventsource" [routerLink]="['eventsource']">Realtime streaming with EventSource</a>
-  </article>
-  <article>
-    <a href="eventsource" [routerLink]="['eventsource']">Realtime streaming with EventSource</a>
-  </article>
-  <article>
-    <a href="eventsource" [routerLink]="['eventsource']">Realtime streaming with EventSource</a>
-  </article>
+  <ul>
+    <li *ngFor="let article of articles">
+      <a href="article.url" [routerLink]="article.url">{{article.title}}</a>
+    </li>
+  </ul>
 </section>
