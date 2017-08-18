@@ -98,7 +98,7 @@
     "component-selector": [
       true,
       "element",
-      "ds",
+      "rf",
       "kebab-case"
     ],
     "use-input-property-decorator": true,
