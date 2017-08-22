@@ -18,10 +18,10 @@ module.exports = {
   },
   output: {
     path: helpers.root('./dist'),
-    publicPath: 'redface-lab/main-web/app',
-    filename: '[name].[chunkhash].bundle.js',
-    sourceMapFilename: '[name].[chunkhash].bundle.map',
-    chunkFilename: '[id].[chunkhash].chunk.js'
+    publicPath: 'redface-lab',
+    filename: 'main-web/app/[name].[chunkhash].bundle.js',
+    sourceMapFilename: 'main-web/app/[name].[chunkhash].bundle.map',
+    chunkFilename: 'main-web/app/[id].[chunkhash].chunk.js'
   },
   resolve: {
     unsafeCache: true,
