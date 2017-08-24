@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="kr">
+<head>
+  <base href="/"/>
+  <title>JazzyRedfaces' Lab Session</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="assets/imgs/favicon.ico"/>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    (function () {
+      let redirect = window.sessionStorage.redirect;
+      delete window.sessionStorage.redirect;
+      if (redirect && redirect != window.location.href) {
+        windowhistory.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+</head>
+<body>
+<rf-entry></rf-entry>
+<script type="text/javascript" src="main-web/app/polyfills.f63fcc3c99fb4d890e7f.bundle.js"></script><script type="text/javascript" src="main-web/app/vendor.9e5f20913a4102adb9e9.bundle.js"></script><script type="text/javascript" src="main-web/app/main.92416c0cf2b87fe60ab9.bundle.js"></script></body>
+</html>
