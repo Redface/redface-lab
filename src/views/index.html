@@ -9,6 +9,15 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    (function () {
+      let redirect = window.sessionStorage.redirect;
+      delete window.sessionStorage.redirect;
+      if (redirect && redirect != window.location.href) {
+        windowhistory.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
 </head>
 <body>
 <rf-entry></rf-entry>
