@@ -1,7 +1,0 @@
-.awcache
-.git
-.idea
-.DS_Store
-*.swp
-node_modules
-package-lock.json
