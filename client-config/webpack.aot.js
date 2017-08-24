@@ -18,7 +18,6 @@ module.exports = {
   },
   output: {
     path: helpers.root('./dist'),
-    publicPath: 'redface-lab',
     filename: 'main-web/app/[name].[chunkhash].bundle.js',
     sourceMapFilename: 'main-web/app/[name].[chunkhash].bundle.map',
     chunkFilename: 'main-web/app/[id].[chunkhash].chunk.js'
