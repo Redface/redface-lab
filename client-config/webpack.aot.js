@@ -74,6 +74,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {from: 'src/assets', to: 'assets'},
+      {from: 'src/view/404.html', to: ''},
       {from: '.nojekyll', to: ''}
     ]),
     new HtmlWebpackPlugin({
