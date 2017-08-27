@@ -1,7 +1,26 @@
-<div>
-  <button (click)="increase()">Increment</button>
+<section>
   <div>Current Count: {{ counter$ | async }}</div>
+  <button (click)="increase()">Increment</button>
   <button (click)="decrease()">Decrement</button>
-
-  <button (click)="reset(3)">Reset Counter</button>
-</div>
+  <button (click)="reset(0)">Reset Counter</button>
+</section>
+<section>
+  <article>
+    <p>First time I've experienced Redux is early of this year. I had to take a part in a new project which is based on
+      React/Redux.</p>
+    <p>I'm an Angular user, and it was my sort of a huge challenge to adopt React based skills. Data management like
+      Redux
+      or Flux wasn't that necessary when using Angular for me, because RxJS with Observable was good enough to manage
+      data
+      changing frequently and communicating in-between components.</p>
+    <p>But while doing the new project with React/Redux, I realized separating concerns is really helpful to manage a
+      lot
+      of data and events. Then I looked back at my previous projects and found high complexity and coupling between
+      components and services.</p>
+    <p><a target="_blank" href="https://github.com/ngrx">Ngrx</a> project is reactive extensions for Angular and one of
+      this project is
+      <a target="_blank" href="https://github.com/ngrx/store">ngrx/store</a> which is state management
+      for Angular inspired by Redux.</p>
+    <p></p>
+  </article>
+</section>
