@@ -12,11 +12,11 @@ import { NgrxModel } from './store/ngrx.model';
 export class NgrxComponent implements OnInit {
   counter$: Observable<number>;
 
-  ngOnInit() {
-  }
-
   constructor(private _ngrxModel: NgrxModel) {
     this.counter$ = _ngrxModel.counter$;
+  }
+
+  ngOnInit() {
   }
 
   increase() {

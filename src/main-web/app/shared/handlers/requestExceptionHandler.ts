@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Rx';
 export class RequestExceptionHandler extends ErrorHandler {
 
   constructor() {
-    super(false);
+    super();
   }
 
   handleError(error:any) {
