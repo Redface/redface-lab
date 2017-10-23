@@ -2,12 +2,11 @@ const webpack = require('webpack');
 const helpers = require('./helpers');
 const path = require('path');
 
-// problem with copy-webpack-plugin
 var CopyWebpackPlugin = (CopyWebpackPlugin = require('copy-webpack-plugin'), CopyWebpackPlugin.default || CopyWebpackPlugin);
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const ENV = process.env.NODE_ENV;
-if (ENV !== 'local' && ENV !== 'local-server' && ENV !== 'dev' && ENV !== 'alpha' && ENV !== 'prod') {
+if (ENV !== 'local' && ENV !== 'local-server' && ENV !== 'dev' && ENV !== 'prod') {
   throw new Error('NODE_ENV must be specified (local or dev or prod)');
 }
 

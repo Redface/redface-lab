@@ -13,7 +13,7 @@ const experimentRoutes:Routes = <Routes>[
     children: [
       {path: '', component: ExperimentListComponent},
       {path: 'grid', component: GridComponent},
-      {path: 'ngrx', component: NgrxComponent}
+      {path: 'ngrx-store', component: NgrxComponent}
     ]
   }
 ];

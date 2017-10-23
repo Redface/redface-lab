@@ -20,7 +20,7 @@ module.exports = {
     path: helpers.root('./dist'),
     filename: 'main-web/app/[name].[chunkhash].bundle.js',
     sourceMapFilename: 'main-web/app/[name].[chunkhash].bundle.map',
-    chunkFilename: 'main-web/app/[id].[chunkhash].js'
+    chunkFilename: 'main-web/app/[id].[chunkhash].chunk.js'
   },
   resolve: {
     unsafeCache: true,
@@ -73,7 +73,9 @@ module.exports = {
       unsafe: true
     }),
     new CopyWebpackPlugin([
-      {from: 'src/assets', to: 'assets'}
+      {from: 'src/assets', to: 'assets'},
+      {from: 'src/views/404.html', to: ''},
+      {from: '.nojekyll', to: ''}
     ]),
     new HtmlWebpackPlugin({
       template: 'src/views/index.html',

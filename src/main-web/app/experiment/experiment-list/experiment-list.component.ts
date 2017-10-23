@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperimentListComponent implements OnInit {
 
+  articles = [
+    {url: 'grid', title: 'ZIGZAG GRID'},
+    {url: 'ngrx-store', title: 'NGRX/STORE'},
+  ];
+
   constructor() {
   }
 
