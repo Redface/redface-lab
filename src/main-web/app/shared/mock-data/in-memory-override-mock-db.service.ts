@@ -1,143 +1,71 @@
-import { ResponseOptions, URLSearchParams } from '@angular/http';
-
-import {
-  ParsedUrl, HttpMethodInterceptorArgs, STATUS, createErrorResponse, createObservableResponse
-} from 'angular-in-memory-web-api/index';
+import { ResponseOptions, RequestInfo } from 'angular-in-memory-web-api/interfaces';
+import { STATUS, getStatusText } from 'angular-in-memory-web-api/http-status-codes';
 
 import { InMemoryMockDbService } from './in-memory-mock-db.service';
 
 export class InMemoryOverrideMockDbService extends InMemoryMockDbService {
 
-  // parseUrl override
-  parseUrl(url:string):ParsedUrl {
-    try {
-      const loc = this.getLocation(url);
-      let urlRoot = '';
-      if (loc.host !== undefined) {
-        urlRoot = loc.protocol + '//' + loc.host + '/';
-      }
-
-      const path = loc.href.split(urlRoot)[1];
-      const pathFragments:string[] = path.split('/');
-
-      let base = '';
-      let collectionName = '';
-      pathFragments.filter((data, index) => {
-        if (index === 0) {
-          base = data;
-        }
-        if (index === 1) {
-          collectionName = data;
-        }
-        if (index > 1) {
-          collectionName += '/' + data;
-        }
-      });
-
-      const resourceUrl = urlRoot + base + '/' + collectionName + '/';
-      const id = '';
-      const query = new URLSearchParams('');
-      const result:ParsedUrl = {base, collectionName, id, query, resourceUrl};
-      return result;
-    } catch (err) {
-      const msg = `unable to parse url '${url}'; original error: ${err.message}`;
-      throw new Error(msg);
-    }
+  protected post(reqInfo: RequestInfo) {
+    return reqInfo.utils.createResponse$(() => {
+      const resp: ResponseOptions = this.getResponseOptions(reqInfo);
+      return this.finishOptions(resp, reqInfo);
+    });
   }
 
-  // HTTP POST interceptor
-  protected post(interceptorArgs:HttpMethodInterceptorArgs) {
-    let resp:ResponseOptions;
-
-    const {collection, collectionName, headers, req} = interceptorArgs.requestInfo;
-    let data:any = collection;
-    if (data) {
-      resp = new ResponseOptions({
-        body: this.clone(data),
-        headers: headers,
-        status: STATUS.OK
-      });
-    } else {
-      resp = createErrorResponse(req, STATUS.NOT_FOUND,
-        `'${collectionName}' not found`);
-    }
-
-    return createObservableResponse(req, resp);
+  protected patch(reqInfo: RequestInfo) {
+    return reqInfo.utils.createResponse$(() => {
+      const resp: ResponseOptions = this.getResponseOptions(reqInfo);
+      return this.finishOptions(resp, reqInfo);
+    });
   }
 
-  // HTTP POST interceptor
-  protected patch(interceptorArgs:HttpMethodInterceptorArgs) {
-    let resp:ResponseOptions;
-
-    const {collection, collectionName, headers, req} = interceptorArgs.requestInfo;
-    let data:any = collection;
-    if (data) {
-      resp = new ResponseOptions({
-        body: this.clone(data),
-        headers: headers,
-        status: STATUS.OK
-      });
-    } else {
-      resp = createErrorResponse(req, STATUS.NOT_FOUND,
-        `'${collectionName}' not found`);
-    }
-
-    return createObservableResponse(req, resp);
+  protected put(reqInfo: RequestInfo) {
+    return reqInfo.utils.createResponse$(() => {
+      const resp: ResponseOptions = this.getResponseOptions(reqInfo);
+      return this.finishOptions(resp, reqInfo);
+    });
   }
 
-  // HTTP DELETE interceptor
-  protected delete(interceptorArgs:HttpMethodInterceptorArgs) {
-    let resp:ResponseOptions;
-
-    const {collection, collectionName, headers, req} = interceptorArgs.requestInfo;
-    let data:any = collection;
-    if (data) {
-      resp = new ResponseOptions({
-        body: this.clone(data),
-        headers: headers,
-        status: STATUS.OK
-      });
-    } else {
-      resp = createErrorResponse(req, STATUS.NOT_FOUND,
-        `'${collectionName}' not found`);
-    }
-
-    return createObservableResponse(req, resp);
+  protected delete(reqInfo: RequestInfo) {
+    return reqInfo.utils.createResponse$(() => {
+      const resp: ResponseOptions = this.getResponseOptions(reqInfo);
+      return this.finishOptions(resp, reqInfo);
+    });
   }
 
-  protected get(interceptorArgs:HttpMethodInterceptorArgs) {
-
-    let resp:ResponseOptions;
-
-    const {id, collection, collectionName, headers, req} = interceptorArgs.requestInfo;
-    let data:any = collection;
-
-    if (data) {
-      resp = new ResponseOptions({
-        body: this.clone(data),
-        headers: headers,
-        status: STATUS.OK
-      });
-    } else {
-      resp = createErrorResponse(req, STATUS.NOT_FOUND,
-        `'${collectionName}' with id='${id}' not found`);
-    }
-
-    return createObservableResponse(req, resp);
+  protected get(reqInfo: RequestInfo) {
+    return reqInfo.utils.createResponse$(() => {
+      const resp = this.getResponseOptions(reqInfo);
+      return this.finishOptions(resp, reqInfo);
+    });
   }
 
-  /***
-   * HTML상에서 실제로 쓰이는 URL을 얻어내기 위해 anchorElement 생성 후 url을 가져온다
-   * @param href
-   * @returns {HTMLAnchorElement|HTMLElement}
-   */
-  private getLocation(href:string) {
-    const el = document.createElement('a');
-    el.href = href;
-    return el;
-  };
+  protected options(reqInfo: RequestInfo) {
+    return reqInfo.utils.createResponse$(() => {
+      const resp = this.getResponseOptions(reqInfo);
+      return this.finishOptions(resp, reqInfo);
+    });
+  }
 
-  private clone(data:any) {
-    return JSON.parse(JSON.stringify(data));
+  private getResponseOptions(reqInfo: RequestInfo) {
+
+    const { collection, collectionName, headers, req } = reqInfo;
+    const apiUrl = req['urlWithParams'].split(reqInfo.apiBase)[1];
+    let data: any = this.dbObj[apiUrl];
+    const resp: ResponseOptions = data ? {
+      body: this.clone(data),
+      headers: headers,
+      status: STATUS.OK
+    } : { body: { error: `'${collectionName}' not found` }, status: STATUS.NOT_FOUND };
+    return resp;
+  }
+
+  private clone(data: any) { return JSON.parse(JSON.stringify(data)); }
+
+  private finishOptions(options: ResponseOptions, { headers, url }: RequestInfo) {
+    options.statusText = getStatusText(options.status);
+    options.headers = headers;
+    options.url = url;
+    return options;
   }
 }
