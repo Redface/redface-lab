@@ -1,4 +1,4 @@
-import { InMemoryDbService } from 'angular-in-memory-web-api/index';
+import { InMemoryDbService } from 'angular-in-memory-web-api/interfaces';
 
 export class InMemoryMockDbService implements InMemoryDbService {
 
