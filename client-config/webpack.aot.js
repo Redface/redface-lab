@@ -5,7 +5,7 @@ var CopyWebpackPlugin = (CopyWebpackPlugin = require('copy-webpack-plugin'), Cop
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commonConfig = require('./webpack.common.js'); // the settings that are common to prod and dev
 
-const AotPlugin = require('@ngtools/webpack').AotPlugin;
+const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
@@ -54,7 +54,7 @@ module.exports = {
       minimise: true
     }),
     new WebpackMd5Hash(),
-    new AotPlugin({
+    new AngularCompilerPlugin({
       tsConfigPath: './tsconfig.aot.json'
     }),
     new UglifyJsPlugin({
