@@ -1,7 +1,6 @@
 import { Type, ModuleWithProviders } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 
-import { StoreModule } from '@ngrx/store';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api/http-client-in-memory-web-api.module';
 
 import { AppRoutingModule } from './app.routing.module';
@@ -16,7 +15,7 @@ import { InMemoryOverrideMockDbService } from './shared/mock-data/in-memory-over
 const NG_MODULES: Array<Type<any> | ModuleWithProviders | any[]> =
   <any>[BrowserModule];
 
-const THIRDPARTY_MODULES: Array<Type<any> | ModuleWithProviders | any[]> = [StoreModule.forRoot([])];
+const THIRDPARTY_MODULES: Array<Type<any> | ModuleWithProviders | any[]> = [];
 const CUSTOMISED_MODULES: Array<Type<any> | ModuleWithProviders | any[]> =
   <any>[CoreModule, AboutModule, ExperimentModule, AppRoutingModule]; // order matters, AppRoutingModules should come last
 

@@ -5,10 +5,9 @@ import { ExperimentComponent } from './experiment.component';
 import { ExperimentRoutingModule } from './experiment.routing.module';
 import { GridComponent } from './grid/grid.component';
 import { ExperimentListComponent } from './experiment-list/experiment-list.component';
-import { NgrxModule } from './ngrx/ngrx.module';
 
 @NgModule({
-  imports: [CommonModule, ExperimentRoutingModule, NgrxModule],
+  imports: [CommonModule, ExperimentRoutingModule],
   providers: [],
   declarations: [ExperimentComponent, ExperimentListComponent, GridComponent],
   exports: [ExperimentComponent]
