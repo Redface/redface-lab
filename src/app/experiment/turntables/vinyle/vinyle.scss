@@ -1,0 +1,15 @@
+div {
+  border: 1px solid red;
+  width: 20%;
+  display: inline-block;
+  animation: test_hey 2s linear 0s infinite;
+}
+
+@keyframes test_hey {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
