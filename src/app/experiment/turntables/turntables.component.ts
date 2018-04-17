@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DIRECTION } from './enums/enums';
+import { VinyleConfig } from './interfaces/vinyle';
 
 @Component({
   selector: 'rf-turntables',
@@ -6,11 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['turntables.scss']
 })
 export class TurntablesComponent implements OnInit {
+  private leftVinyle: VinyleConfig;
+  private rightVinyle: VinyleConfig;
+  private clockwise = DIRECTION.CLOCKWISE;
+
   constructor() {
     this.leftVinyle = {
       rpm: 100,
-      direction: Direction.counter-clockwise
-    }
+      direction: this.clockwise,
+    };
+    this.rightVinyle = {
+      rpm: 100,
+      direction: this.clockwise,
+    };
   }
 
   ngOnInit() {

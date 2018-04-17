@@ -1,5 +1,5 @@
 $initDeg: 0deg;
-$maxDeg: 360;
+$maxDeg: 360deg;
 .vinyle_skin {
   border: 1px solid red;
 }
@@ -22,7 +22,7 @@ $maxDeg: 360;
     transform: rotate($initDeg);
   }
   to {
-    transform: rotate(-$maxDeg);
+    transform: rotate($maxDeg);
   }
 }
 

@@ -1,14 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-
-interface Direction {
-  left: string;
-  right: string;
-}
-
-interface VinyleConfig {
-  rpm: number;
-  direction: Direction;
-}
+import { Component, Input, OnInit } from '@angular/core';
+import { DIRECTION } from '../enums/enums';
+import { VinyleConfig } from '../interfaces/vinyle';
 
 @Component({
   selector: 'rf-vinyle',
@@ -22,10 +14,9 @@ export class VinyleComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   setDirection() {
-    return this.config.direction.right ? 'spin-clockwise' : 'spin-counter-clockwise';
+    return this.config.direction === DIRECTION.CLOCKWISE ? 'spin-clockwise' : 'spin-counter-clockwise';
   }
 }
