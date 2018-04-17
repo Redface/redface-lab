@@ -1,15 +1,36 @@
-div {
+$initDeg: 0deg;
+$maxDeg: 360;
+.vinyle_skin {
   border: 1px solid red;
-  width: 20%;
-  display: inline-block;
-  animation: test_hey 2s linear 0s infinite;
 }
 
-@keyframes test_hey {
+.vinyle_strt {
+  width: 20%;
+  display: inline-block;
+}
+
+.spin-clockwise {
+  animation: spin_clockwise 2s linear 0s infinite;
+}
+
+.spin-counter-clockwise {
+  animation: spin_counter_clockwise 2s linear 0s infinite;
+}
+
+@keyframes spin_clockwise {
   from {
-    transform: rotate(0deg);
+    transform: rotate($initDeg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(-$maxDeg);
+  }
+}
+
+@keyframes spin_counter_clockwise {
+  from {
+    transform: rotate($initDeg);
+  }
+  to {
+    transform: rotate(-$maxDeg);
   }
 }
