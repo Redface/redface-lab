@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { DIRECTION } from './enums/enums';
-import { VinyleConfig } from './interfaces/vinyle';
+import {Component, OnInit} from '@angular/core';
+import {DIRECTION} from './enums/enums';
+import {VinyleConfig} from './interfaces/vinyle';
 
 @Component({
   selector: 'rf-turntables',
@@ -8,8 +8,8 @@ import { VinyleConfig } from './interfaces/vinyle';
   styleUrls: ['turntables.scss']
 })
 export class TurntablesComponent implements OnInit {
-  private leftVinyle: VinyleConfig;
-  private rightVinyle: VinyleConfig;
+  leftVinyle: VinyleConfig;
+  rightVinyle: VinyleConfig;
   private clockwise = DIRECTION.CLOCKWISE;
 
   constructor() {

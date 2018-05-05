@@ -1,4 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 import { DIRECTION } from '../enums/enums';
 import { VinyleConfig } from '../interfaces/vinyle';
 
@@ -9,6 +16,7 @@ import { VinyleConfig } from '../interfaces/vinyle';
 })
 export class VinyleComponent implements OnInit {
   @Input() config: VinyleConfig;
+  private animations = [];
 
   constructor() {
   }

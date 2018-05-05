@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
-import 'rxjs/add/operator/catch';
+// import { catchError } from 'rxjs/operators';
+import {catchError} from 'rxjs/internal/operators';
 
 import {RequestExceptionHandler} from './requestExceptionHandler';
 import {CONTENT_TYPE} from '../enums/content-type.enum';
@@ -16,12 +17,12 @@ export class RequestHandler {
     const params: HttpParams = new HttpParams();
     Object.keys(paramsObj).map(key => params.set(key, paramsObj[key]));
 
-    return this.http.get(url, {...commonOptions, params}).catch(err => this.handleError(err));
+    return this.http.get(url, {...commonOptions, params}).pipe(catchError(err => this.handleError(err)));
   }
 
   post(url: string, body: any) {
     return this.http.post(url, JSON.stringify(body), this.getCommonOptions())
-      .catch(err => this.handleError(err));
+      .pipe(catchError(err => this.handleError(err)));
   }
 
   options(url: string, paramsObj = {}) {
@@ -30,22 +31,22 @@ export class RequestHandler {
     const commonOptions = this.getCommonOptions();
 
     return this.http.options(url, {...commonOptions, params})
-      .catch(err => this.handleError(err));
+      .pipe(catchError(err => this.handleError(err)));
   }
 
   put(url: string, body: any) {
     return this.http.put(url, JSON.stringify(body), this.getCommonOptions())
-      .catch(err => this.handleError(err));
+      .pipe(catchError(err => this.handleError(err)));
   }
 
   patch(url: string, body: any) {
     return this.http.patch(url, JSON.stringify(body), this.getCommonOptions())
-      .catch(err => this.handleError(err));
+      .pipe(catchError(err => this.handleError(err)));
   }
 
   delete(url: string) {
     return this.http.delete(url, this.getCommonOptions())
-      .catch(err => this.handleError(err));
+      .pipe(catchError(err => this.handleError(err)));
   }
 
   private getCommonOptions() {
