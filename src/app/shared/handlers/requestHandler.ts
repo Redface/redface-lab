@@ -9,6 +9,8 @@ import {CONTENT_TYPE} from '../enums/content-type.enum';
 
 @Injectable()
 export class RequestHandler {
+  private catchException = catchError(err => this.handleError(err));
+
   constructor(private reqExceptionHandler: RequestExceptionHandler, private http: HttpClient) {
   }
 
@@ -17,12 +19,12 @@ export class RequestHandler {
     const params: HttpParams = new HttpParams();
     Object.keys(paramsObj).map(key => params.set(key, paramsObj[key]));
 
-    return this.http.get(url, {...commonOptions, params}).pipe(catchError(err => this.handleError(err)));
+    return this.http.get(url, {...commonOptions, params}).pipe(this.catchException);
   }
 
   post(url: string, body: any) {
     return this.http.post(url, JSON.stringify(body), this.getCommonOptions())
-      .pipe(catchError(err => this.handleError(err)));
+      .pipe(this.catchException);
   }
 
   options(url: string, paramsObj = {}) {
@@ -31,22 +33,22 @@ export class RequestHandler {
     const commonOptions = this.getCommonOptions();
 
     return this.http.options(url, {...commonOptions, params})
-      .pipe(catchError(err => this.handleError(err)));
+      .pipe(this.catchException);
   }
 
   put(url: string, body: any) {
     return this.http.put(url, JSON.stringify(body), this.getCommonOptions())
-      .pipe(catchError(err => this.handleError(err)));
+      .pipe(this.catchException);
   }
 
   patch(url: string, body: any) {
     return this.http.patch(url, JSON.stringify(body), this.getCommonOptions())
-      .pipe(catchError(err => this.handleError(err)));
+      .pipe(this.catchException);
   }
 
   delete(url: string) {
     return this.http.delete(url, this.getCommonOptions())
-      .pipe(catchError(err => this.handleError(err)));
+      .pipe(this.catchException);
   }
 
   private getCommonOptions() {
