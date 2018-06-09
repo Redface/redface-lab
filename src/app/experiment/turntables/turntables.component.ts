@@ -14,7 +14,7 @@ export class TurntablesComponent implements OnInit {
 
   constructor() {
     this.leftVinyle = {
-      rpm: 100,
+      rpm: 50,
       direction: this.clockwise,
     };
     this.rightVinyle = {

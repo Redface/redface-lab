@@ -10,11 +10,15 @@ $maxDeg: 360deg;
 }
 
 .spin-clockwise {
-  animation: spin_clockwise 2s linear 0s infinite;
+  //animation: spin_clockwise 2s linear 0s infinite;
+  animation: spin_clockwise linear 0s infinite;
+  //animation-duration: 2s;
 }
 
 .spin-counter-clockwise {
-  animation: spin_counter_clockwise 2s linear 0s infinite;
+  //animation: spin_counter_clockwise 2s linear 0s infinite;
+  animation: spin_counter_clockwise linear 0s infinite;
+  //animation-duration: 2s;
 }
 
 @keyframes spin_clockwise {
