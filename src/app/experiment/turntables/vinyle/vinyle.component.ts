@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {
   trigger,
   state,
@@ -6,8 +6,8 @@ import {
   animate,
   transition
 } from '@angular/animations';
-import { DIRECTION } from '../enums/enums';
-import { VinyleConfig } from '../interfaces/vinyle';
+import {DIRECTION} from '../enums/enums';
+import {VinyleConfig} from '../interfaces/vinyle';
 
 @Component({
   selector: 'rf-vinyle',
@@ -16,12 +16,13 @@ import { VinyleConfig } from '../interfaces/vinyle';
 })
 export class VinyleComponent implements OnInit {
   @Input() config: VinyleConfig;
-  private animations = [];
+  private style = {};
 
   constructor() {
   }
 
   ngOnInit() {
+    this.style = {animationDuration: `${60000 / this.config.rpm / 100}s`};
   }
 
   setDirection() {

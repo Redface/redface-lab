@@ -14,11 +14,11 @@ export class TurntablesComponent implements OnInit {
 
   constructor() {
     this.leftVinyle = {
-      rpm: 100,
+      rpm: 150,
       direction: this.clockwise,
     };
     this.rightVinyle = {
-      rpm: 100,
+      rpm: 200,
       direction: this.clockwise,
     };
   }

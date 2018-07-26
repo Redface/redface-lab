@@ -1,3 +1,6 @@
 <div>DJ Turntables</div>
-<rf-vinyle [config]="leftVinyle"></rf-vinyle>
-<rf-vinyle [config]="rightVinyle"></rf-vinyle>
+<div class="turntable-wrapper">
+  <rf-vinyle [config]="leftVinyle" class="mix-device"></rf-vinyle>
+  <rf-mixer class="mix-device"></rf-mixer>
+  <rf-vinyle [config]="rightVinyle" class="mix-device"></rf-vinyle>
+</div>
