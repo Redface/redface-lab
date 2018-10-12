@@ -9,11 +9,12 @@ import {ExperimentListComponent} from './experiment-list/experiment-list.compone
 import {TurntablesComponent} from './turntables/turntables.component';
 import {VinyleComponent} from './turntables/vinyle/vinyle.component';
 import {MixerComponent} from './turntables/mixer/mixer.component';
+import {PitchControllerComponent} from './turntables/mixer/pitch-controller/pitch-controller.component';
 
 @NgModule({
   imports: [CommonModule, ExperimentRoutingModule, BrowserAnimationsModule],
   providers: [],
-  declarations: [ExperimentComponent, ExperimentListComponent, GridComponent, TurntablesComponent, VinyleComponent, MixerComponent],
+  declarations: [ExperimentComponent, ExperimentListComponent, GridComponent, TurntablesComponent, VinyleComponent, MixerComponent, PitchControllerComponent],
   exports: [ExperimentComponent]
 })
 export class ExperimentModule {

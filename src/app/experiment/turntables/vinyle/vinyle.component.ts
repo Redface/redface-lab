@@ -16,7 +16,7 @@ import {VinyleConfig} from '../interfaces/vinyle';
 })
 export class VinyleComponent implements OnInit {
   @Input() config: VinyleConfig;
-  private style = {};
+  style = {};
 
   constructor() {
   }
