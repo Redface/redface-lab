@@ -14,7 +14,10 @@ import {PitchControllerComponent} from './turntables/mixer/pitch-controller/pitc
 @NgModule({
   imports: [CommonModule, ExperimentRoutingModule, BrowserAnimationsModule],
   providers: [],
-  declarations: [ExperimentComponent, ExperimentListComponent, GridComponent, TurntablesComponent, VinyleComponent, MixerComponent, PitchControllerComponent],
+  declarations: [
+    ExperimentComponent, ExperimentListComponent, GridComponent, TurntablesComponent, VinyleComponent, MixerComponent,
+    PitchControllerComponent
+  ],
   exports: [ExperimentComponent]
 })
 export class ExperimentModule {
