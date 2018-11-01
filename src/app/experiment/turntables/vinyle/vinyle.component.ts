@@ -1,11 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition
-} from '@angular/animations';
 import {DIRECTION} from '../enums/enums';
 import {VinyleConfig} from '../interfaces/vinyle';
 

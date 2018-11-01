@@ -33,12 +33,12 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
-    "@angular/cli": "^7.0.3",
+    "@angular/cli": "^7.0.4",
     "@angular/compiler-cli": "7.0.2",
     "@angular/language-service": "7.0.2",
     "@types/jasmine": "^2.8.9",
     "@types/jasminewd2": "^2.0.5",
-    "@types/node": "^10.12.1",
+    "@types/node": "^10.12.2",
     "codelyzer": "^4.5.0",
     "jasmine-core": "~3.3.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -52,7 +52,7 @@
     "protractor": "~5.4.1",
     "ts-node": "~7.0.1",
     "tslint": "~5.11.0",
-    "typescript": "3.1.5"
+    "typescript": "3.1.6"
   },
   "jest": {
     "preset": "jest-preset-angular",
