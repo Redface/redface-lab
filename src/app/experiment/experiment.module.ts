@@ -12,6 +12,7 @@ import {MixerComponent} from './turntables/mixer/mixer.component';
 import {PitchControllerComponent} from './turntables/mixer/pitch-controller/pitch-controller.component';
 
 @NgModule({
+
   imports: [CommonModule, ExperimentRoutingModule, BrowserAnimationsModule],
   providers: [],
   declarations: [
