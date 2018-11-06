@@ -6,7 +6,7 @@ import { AboutComponent } from './about/about.component';
 
 
 // let's talk about pathMatch: full and prefix
-const appRoutes:Routes = <Routes>[
+const appRoutes: Routes = <Routes>[
   {
     path: '',
     component: ExperimentComponent
