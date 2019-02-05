@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Title } from '@angular/platform-browser';
 
-import { RequestHandler } from '../shared/handlers/requestHandler';
-import { RequestExceptionHandler } from '../shared/handlers/requestExceptionHandler';
+import { RequestHandler } from '../shared/handlers';
+import { RequestExceptionHandler } from '../shared/handlers';
 
 const NG_MODULES: Array<Type<any> | ModuleWithProviders | any[]> =
   <any>[HttpClientModule, CommonModule];

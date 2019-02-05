@@ -9,8 +9,7 @@ import { CoreModule } from './core/core.module';
 import { AboutModule } from './about/about.module';
 import { environment } from '../environments/environment';
 
-const NG_MODULES: Array<Type<any> | ModuleWithProviders | any[]> =
-  <any>[BrowserModule];
+const NG_MODULES: Array<Type<any> | ModuleWithProviders | any[]> = <any>[BrowserModule];
 
 const THIRDPARTY_MODULES: Array<Type<any> | ModuleWithProviders | any[]> = [];
 const CUSTOMISED_MODULES: Array<Type<any> | ModuleWithProviders | any[]> =
