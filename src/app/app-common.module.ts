@@ -8,6 +8,8 @@ import { AppService } from './app.service';
 import { CoreModule } from './core/core.module';
 import { AboutModule } from './about/about.module';
 import { environment } from '../environments/environment';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
 
 const NG_MODULES: Array<Type<any> | ModuleWithProviders | any[]> = <any>[BrowserModule];
 
@@ -22,10 +24,10 @@ const THIRDPARTY_PROVIDERS: Array<Type<any> | ModuleWithProviders | any[]> = [];
 const CUSTOMISED_PROVIDERS: Array<Type<any> | ModuleWithProviders | any[]> = <any>[AppService];
 
 if (environment.production === false) {
-  // modules.push(HttpClientInMemoryWebApiModule.forRoot(InMemoryOverrideMockDbService, {
-  //   delay: 100,
-  //   passThruUnknownUrl: false
-  // }));
+  modules.push(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+    delay: 100,
+    passThruUnknownUrl: false
+  }));
 }
 export const NG_MODULE = {
   imports: modules,
