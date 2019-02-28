@@ -9,17 +9,17 @@ import { AboutComponent } from './about/about.component';
 const appRoutes: Routes = <Routes>[
   {
     path: '',
-    component: ExperimentComponent
+    component: ExperimentComponent,
   },
-  {path: 'experiment', loadChildren: './experiment/experiment.module#ExperimentModule'},
+  { path: 'experiment', loadChildren: './experiment/experiment.module#ExperimentModule' },
   // {path: 'about', loadChildren: './about/about.module#AboutModule'},
-  {path: 'about', component: AboutComponent},
-  {path: '**', redirectTo: ''}
+  { path: 'about', component: AboutComponent },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {
 }
