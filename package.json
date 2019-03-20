@@ -18,15 +18,15 @@
     "npm": ">= 3"
   },
   "dependencies": {
-    "@angular/animations": "8.0.0-beta.8",
-    "@angular/common": "8.0.0-beta.8",
-    "@angular/compiler": "8.0.0-beta.8",
-    "@angular/core": "8.0.0-beta.8",
-    "@angular/forms": "8.0.0-beta.8",
-    "@angular/http": "8.0.0-beta.8",
-    "@angular/platform-browser": "8.0.0-beta.8",
-    "@angular/platform-browser-dynamic": "8.0.0-beta.8",
-    "@angular/router": "8.0.0-beta.8",
+    "@angular/animations": "8.0.0-beta.9",
+    "@angular/common": "8.0.0-beta.9",
+    "@angular/compiler": "8.0.0-beta.9",
+    "@angular/core": "8.0.0-beta.9",
+    "@angular/forms": "8.0.0-beta.9",
+    "@angular/http": "8.0.0-beta.9",
+    "@angular/platform-browser": "8.0.0-beta.9",
+    "@angular/platform-browser-dynamic": "8.0.0-beta.9",
+    "@angular/router": "8.0.0-beta.9",
     "core-js": "^2.6.3",
     "rxjs": "6.4.0",
     "tslib": "^1.9.0",
@@ -35,8 +35,8 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.12.3",
     "@angular/cli": "^8.0.0-beta.7",
-    "@angular/compiler-cli": "8.0.0-beta.8",
-    "@angular/language-service": "8.0.0-beta.8",
+    "@angular/compiler-cli": "8.0.0-beta.9",
+    "@angular/language-service": "8.0.0-beta.9",
     "@types/jasmine": "^3.3.8",
     "@types/jasminewd2": "^2.0.6",
     "@types/node": "^10.12.18",
@@ -54,7 +54,7 @@
     "protractor": "^5.4.2",
     "ts-node": "~7.0.1",
     "tslint": "~5.12.1",
-    "typescript": "^3.2.4"
+    "typescript": "^3.3.4000"
   },
   "jest": {
     "preset": "jest-preset-angular",
