@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: [ header-start ] 0fr [ header-end nav-start ] 0.1fr [ nav-end main-start ] 2fr [ main-end footer-start ] 0.3fr [ footer-end ];
+  grid-template-rows: [ header-start ] 0 [ header-end nav-start ] 0.1fr [ nav-end main-start ] 2fr [ main-end footer-start ] 0.3fr [ footer-end ];
   grid-template-areas: "header" "nav" "main" "footer";
   min-height: 100%;
 }
