@@ -11,7 +11,7 @@ const appRoutes: Routes = <Routes>[
     path: '',
     component: ExperimentComponent,
   },
-  { path: 'experiment', loadChildren: './experiment/experiment.module#ExperimentModule' },
+  { path: 'experiment', loadChildren: () => import('./experiment/experiment.module').then(m => m.ExperimentModule) },
   // {path: 'about', loadChildren: './about/about.module#AboutModule'},
   { path: 'about', component: AboutComponent },
   { path: '**', redirectTo: '' },
